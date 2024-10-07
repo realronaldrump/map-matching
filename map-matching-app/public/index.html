@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>GPX Map Matching App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Import Mapbox GL JS -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.9.1/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 60px;
+            bottom: 0;
+            width: 100%;
+        }
+        .upload-section {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 1;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        #loading-indicator {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            display: none; /* Initially hidden */
+        }
+    </style>
+</head>
+<body>
+    <h1>GPX Map Matching App</h1>
+    <div class="upload-section">
+        <input type="file" id="gpxFile" accept=".gpx,.geojson">
+        <button id="uploadBtn">Upload and Match</button>
+        <button id="exportBtn" style="margin-top: 10px;">Export Matched Route</button>
+    </div>
+    <div id="layer-toggle" class="mapboxgl-ctrl mapboxgl-ctrl-group">
+        <button id="toggle-original">Original Route</button>
+        <button id="toggle-matched">Matched Route</button>
+    </div>
+    <div id="map"></div>
+    <div id="loading-indicator">Processing...</div>
+    
+    <!-- Include your JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
