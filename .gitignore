@@ -5,3 +5,4 @@ package-lock.json
 package.json
 map-matching-app/server/node_modules
 map-matching-app/server/uploads
+.env
